@@ -69,7 +69,7 @@ const WorkPost = ({ data }) => {
                 }
                 title={post.frontmatter.title}
                 // description={post.html}
-                image={post.frontmatter.image}
+                image={post.frontmatter.galleryImages.image}
             // contentComponent={HTMLContent}
             />
         </Layout>

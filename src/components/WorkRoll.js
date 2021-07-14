@@ -108,13 +108,13 @@ class WorkRoll extends React.Component {
                                         </header>
 
                                         {/* this needs to be a image slide */}
-                                        {post.frontmatter.image ? (
+                                        {post.frontmatter.galleryImages.image ? (
                                             <div className="featured-image"
                                             // style={styles.featuredImage}
                                             >
                                                 <PreviewCompatibleImage
                                                     imageInfo={{
-                                                        image: post.frontmatter.image,
+                                                        image: post.frontmatter.galleryImages.image,
                                                         alt: `featured image thumbnail for post ${post.frontmatter.title}`,
                                                     }}
                                                 />
