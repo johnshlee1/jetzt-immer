@@ -161,16 +161,15 @@ export default () => (
                 title
                 templateKey
                 description
-                 
-                image {
-                    childImageSharp {
-                        fluid(maxWidth: 2048, quality: 100) {
-                        ...GatsbyImageSharpFluid
+                galleryImages{
+                    image {
+                        childImageSharp {
+                            fluid(maxWidth: 2048, quality: 100) {
+                            ...GatsbyImageSharpFluid
+                            }
                         }
                     }
-                    }
-                
-                
+                }
                 color
               }
             }
