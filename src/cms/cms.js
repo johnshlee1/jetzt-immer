@@ -1,16 +1,18 @@
 import CMS from 'netlify-cms-app'
 import uploadcare from 'netlify-cms-media-library-uploadcare'
 import cloudinary from 'netlify-cms-media-library-cloudinary'
+import { SlidesControl, SlidesPreview } from "./Slides";
 
-import AboutPagePreview from './preview-templates/AboutPagePreview'
-import BlogPostPreview from './preview-templates/BlogPostPreview'
-import ProductPagePreview from './preview-templates/ProductPagePreview'
+import InfoPagePreview from './preview-templates/InfoPagePreview'
+import WorkPostPreview from './preview-templates/WorkPostPreview'
+import FooterPagePreview from './preview-templates/FooterPagePreview'
 import IndexPagePreview from './preview-templates/IndexPagePreview'
 
 CMS.registerMediaLibrary(uploadcare)
 CMS.registerMediaLibrary(cloudinary)
+CMS.registerWidget("slides", SlidesControl, SlidesPreview);
 
 CMS.registerPreviewTemplate('index', IndexPagePreview)
-CMS.registerPreviewTemplate('about', AboutPagePreview)
-CMS.registerPreviewTemplate('products', ProductPagePreview)
-CMS.registerPreviewTemplate('blog', BlogPostPreview)
+CMS.registerPreviewTemplate('info', InfoPagePreview)
+CMS.registerPreviewTemplate('footer', FooterPagePreview)
+CMS.registerPreviewTemplate('work', WorkPostPreview)
