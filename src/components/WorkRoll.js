@@ -155,13 +155,7 @@ export default () => (
               id
               fields {
                 slug
-              }
-              html
-              frontmatter {
-                title
-                templateKey
-                description
-                galleryImages{
+                galleryImages {
                     image {
                         childImageSharp {
                             fluid(maxWidth: 2048, quality: 100) {
@@ -170,6 +164,13 @@ export default () => (
                         }
                     }
                 }
+              }
+              html
+              frontmatter {
+                title
+                templateKey
+                description
+                
                 color
               }
             }
