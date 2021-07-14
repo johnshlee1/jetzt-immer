@@ -3,18 +3,18 @@ import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 
-import ReactDOM from 'react-dom';
-import GraphiQL from 'graphiql';
-import { createGraphiQLFetcher } from '@graphiql/toolkit';
+// import ReactDOM from 'react-dom';
+// import GraphiQL from 'graphiql';
+// import { createGraphiQLFetcher } from '@graphiql/toolkit';
 
-const fetcher = createGraphiQLFetcher({
-    url: window.location.origin + '/graphql',
-});
+// const fetcher = createGraphiQLFetcher({
+//     url: window.location.origin + '/graphql',
+// });
 
-ReactDOM.render(
-    <GraphiQL fetcher={fetcher} editorTheme={'dracula'} />,
-    document.body,
-);
+// ReactDOM.render(
+//     <GraphiQL fetcher={fetcher} editorTheme={'dracula'} />,
+//     document.body,
+// );
 
 export const IndexPageTemplate = ({
     image,
