@@ -11,7 +11,7 @@ backend:
 media_folder: static/img
 public_folder: /img
 
-
+collections:
   - name: "work"
     label: "Work"
     folder: "src/pages/work"
@@ -82,4 +82,3 @@ public_folder: /img
           - {label: "Imprint", name: "imprint", widget: "markdown"}
           - {label: "Developer", name: "developer", widget: "markdown"}
           - {label: "Copyright", name: "copyright", widget: "markdown"}
-          
