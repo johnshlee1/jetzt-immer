@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+// import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 
 export const WorkPostTemplate = ({
@@ -35,7 +35,7 @@ export const WorkPostTemplate = ({
                 }}
             >
             </div> */}
-            {image ? (
+            {/* {image ? (
                 <div className="featured-image"
                 // style={styles.featuredImage}
                 >
@@ -46,7 +46,7 @@ export const WorkPostTemplate = ({
                         }}
                     />
                 </div>
-            ) : null}
+            ) : null} */}
             <PostContent description={description} />
         </section>
     )
@@ -68,8 +68,8 @@ const WorkPost = ({ data }) => {
                     </Helmet>
                 }
                 title={post.frontmatter.title}
-                // description={post.html}
-                image={post.frontmatter.galleryImages.image}
+            // description={post.html}
+            // image={post.frontmatter.galleryImages.image}
             // contentComponent={HTMLContent}
             />
         </Layout>
@@ -93,16 +93,6 @@ export const pageQuery = graphql`
                 date(formatString: "MMMM DD, YYYY")
                 title
                 description
-                galleryImages{
-                    image {
-                        childImageSharp {
-                            fluid(maxWidth: 2048, quality: 100) {
-                            ...GatsbyImageSharpFluid
-                            }
-                        }
-                    }
-                }
-               
                color
             }
         }

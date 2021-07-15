@@ -1,4 +1,13 @@
 ---
+
+path: /info
+templateKey: info-page
+image: /img/170604.09.정읍.황토현전적지_-203-.jpg
+address: |-
+  *Studio jetzt-immer* 
+  Weisestraße 27 
+  12049 Berlin 
+  Germany
 contact: |-
   Siri Lee Lindskrog 
   Graphic & Type designer
@@ -9,13 +18,6 @@ contact: |-
   Graphic Designer
   a@jetzt-immer.studio 
   +45 53144388 
-path: /info
-templateKey: info-page
-address: |-
-  *Studio jetzt-immer* 
-  Weisestraße 27 
-  12049 Berlin 
-  Germany
 social: "[Instagram](https://instagram.com)"
 about: "Studio jetzt—immer is a Berlin based design studio, specialised in
   editorial design, visual identity, typography driven design and concept
@@ -32,7 +34,6 @@ cv: TALKS Krabbesholm Højskole, Denmark All Heart No Hype, panel discussion,
   Berlin Type Thursday, Berlin Conversas, Berlin PRESS Eye on Design Adobe 99U
   Page Magazine TEACHING Krabbesholm Højskole, Denmark ESDIP, Berlin Godsbanen
   (Workshop), Denmark
-image: /img/jetzt_immer.png
 imprint: Haftung für Inhalte Die Inhalte meiner Seiten wurden mit größter
   Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der
   Inhalte kann ich jedoch keine Gewähr übernehmen. Als Diensteanbieter bin ich

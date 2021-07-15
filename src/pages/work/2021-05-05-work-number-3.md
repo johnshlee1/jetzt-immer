@@ -4,7 +4,7 @@ title: work number 3
 date: 2021-05-05T16:28:41.929Z
 description: |-
     this third work is a **beautiful** magazine cover that contains courageous interviews from the *micro organisms* in our guts
-galleryImages:
+gallery:
   - image: /img//work/2020bookposter.jpg
   - label: Image
     name: image

@@ -8,6 +8,8 @@ backend:
     uploadMedia: '[skip ci] Upload “{{path}}”'
     deleteMedia: '[skip ci] Delete “{{path}}”'
 
+local_backend: true
+
 media_folder: static/img
 public_folder: /img
 
@@ -23,28 +25,14 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "markdown"}
       - label: "Gallery"
-        name: "galleryImages"
+        name: "gallery"
         widget: "list"
-        # fields:
-        #   - { label: "Source", name: "src", widget: "string" }
-        #   - { label: "Alt Text", name: "alt", widget: "string" }
-        # default:
-        #   - { src: "/img/tenis.jpg", alt: "Tenis" }
-        #   - { src: "/img/footbar.jpg", alt: "Football" }
-        default: [
-          {label: "Image", name: "image", widget: "image", media_folder: "static/img/work"}
-        ]
         allow_add: true
-        collapsed: false
-        summary: "{{fields.image}}"
-        minimize_collapsed: false
-        add_to_top: true
+        # summary: "{{fields.image}}"
         label_singular: "image"
         fields: [
           {label: "Image", name: "image", widget: "image", media_folder: "static/img/work"}
         ]
-      # - {label: "Featured Image", name: "image1", widget: "image", media_folder: "static/img/work", media_library: {config: {multiple: true}}, allow_multiple: true}
-      # - {label: Slides, name: "image", widget: "slides", separator: "\n\n<!--s-->\n\n", media_folder: "static/img/work", media_library: {config: {multiple: true}}, allow_multiple: true}
       - {label: "Background Color", name: "color", widget: "color"}
   - name: "pages"
     label: "Pages"
@@ -62,12 +50,12 @@ collections:
         name: "info"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "info-page"}
+          - {label: "image", name: "image", widget: "image"}
           - {label: "Address", name: "address", widget: "markdown"}
           - {label: "Contact", name: "contact", widget: "markdown"}
           - {label: "Social", name: "social", widget: "markdown"}
           - {label: "About", name: "about", widget: "markdown"}
           - {label: "CV", name: "cv", widget: "markdown"}
-          - {label: "image", name: "image", widget: "image"}
           - {label: "Imprint", name: "imprint", widget: "markdown"}
           - {label: "Developer", name: "developer", widget: "markdown"}
           - {label: "Copyright", name: "copyright", widget: "markdown"}

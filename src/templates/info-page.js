@@ -3,6 +3,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 export const InfoPageTemplate = ({
     address,
@@ -16,44 +17,75 @@ export const InfoPageTemplate = ({
     copyright,
     contentComponent
 }) => {
-    const PageContent = contentComponent || Content
+    const PageContent = HTMLContent || Content
 
     return (
-        <section className="section">
+        <>
             <div className="container">
-                <div className="columns">
-                    <div className="column">
-                        <div className="section">
-                            {/* <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
+                <div className="columns" style={styles.columns}>
+                    <section className="column" style={styles.column}>
+                        <PageContent
+                            className="Content"
+                            address={address}
+                        />
+                    </section>
+                    <section className="column" style={styles.column}>
+                        <PageContent
+                            contact={contact}
+                        />
+                    </section>
+                    <section className="column" style={styles.column}>
+                        <PageContent
+                            social={social}
+                        />
+                    </section>
+                    <section className="column" style={styles.column}>
+                        <PageContent
+                            about={about}
+                        />
+                    </section>
+                    <section className="column" style={styles.column}>
+                        <PageContent
+                            cv={cv}
+                        />
+                    </section>
+                    <section className="column" style={styles.column}>
+                        <PageContent
+                            imprint={imprint}
+                        />
+                    </section>
+                    <section className="column" style={styles.column}>
+                        <PageContent
+                            developer={developer}
+                        />
+                    </section>
+                    <section className="column" style={styles.column}>
+                        <PageContent
+                            copyright={copyright}
+                        />
+                    </section>
+                    <section className="column" style={styles.column}>
+                        {/* <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
                                 {title}
                             </h2> */}
-                            {/* <img src={image} alt="jetzt-immer" style={{ width: '88px' }} /> */}
-                            <div
-                                className="full-width-image margin-top-0"
-                                style={{
-                                    backgroundImage: `url(${!!image.childImageSharp ? image.childImageSharp.fluid.src : image
-                                        })`,
-                                    backgroundPosition: `center`,
-                                    backgroundAttachment: `fixed`,
-                                }}
+                        {/* <img src={image} alt="jetzt-immer" style={{ width: '88px' }} /> */}
+                        {image ? (
+                            <div className="featured-image"
+                            // style={styles.featuredImage}
                             >
+                                <PreviewCompatibleImage
+                                    imageInfo={{
+                                        image: image,
+                                        alt: `jetzt-immer studio picture`,
+                                    }}
+                                />
                             </div>
-                            <PageContent
-                                className="Content"
-                                address={address}
-                                contact={contact}
-                                social={social}
-                                about={about}
-                                cv={cv}
-                                imprint={imprint}
-                                developer={developer}
-                                copyright={copyright}
-                            />
-                        </div>
-                    </div>
+                        ) : null
+                        }
+                    </section >
                 </div>
             </div>
-        </section>
+        </>
     )
 }
 
@@ -64,7 +96,7 @@ const InfoPage = ({ data }) => {
     return (
         <Layout>
             <InfoPageTemplate
-                contentComponent={HTMLContent}
+                // contentComponent={HTMLContent}
                 // title={post.frontmatter.title}
                 image={post.frontmatter.image}
                 address={post.frontmatter.address}
@@ -83,25 +115,39 @@ const InfoPage = ({ data }) => {
 export default InfoPage
 
 export const infoPageQuery = graphql`
-    query InfoPageTemplate {
-        markdownRemark(frontmatter: { templateKey: { eq: "info-page" } }) {
-            frontmatter {
+            query InfoPageTemplate {
+                markdownRemark(frontmatter: {templateKey: {eq: "info-page" } }) {
+                frontmatter {
                 address
                 contact
-                social
-                about
-                cv
-                image {
-                    childImageSharp {
-                        fluid(maxWidth: 2048, quality: 100) {
-                            ...GatsbyImageSharpFluid
-                        }
+            social
+            about
+            cv
+            image {
+                childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+            }
                     }
                 }
-                imprint
-                developer
-                copyright
+            imprint
+            developer
+            copyright
             }
         }
     }
-`
+            `
+
+export const styles = {
+    // container: {
+    //     width: '100%',
+    // },
+    columns: {
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'row',
+    },
+    column: {
+        width: '100%',
+    }
+}

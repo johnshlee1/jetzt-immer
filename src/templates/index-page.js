@@ -19,9 +19,9 @@ import Layout from '../components/Layout'
 export const IndexPageTemplate = ({
     image,
 }) => (
-    <div>
+    <>
         <div
-            className="landing-image margin-top-0"
+            className="landing-image"
             style={{
                 backgroundImage: `url(${!!image.childImageSharp ? image.childImageSharp.fluid.src : image
                     })`,
@@ -30,7 +30,7 @@ export const IndexPageTemplate = ({
             }}
         >
         </div>
-    </div>
+    </>
 )
 
 IndexPageTemplate.propTypes = {

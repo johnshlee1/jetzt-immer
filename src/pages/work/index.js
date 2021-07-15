@@ -7,10 +7,12 @@ import Footer from '../../components/Footer'
 export default class WorkIndexPage extends React.Component {
     render () {
         return (
-            <Layout>
-                <WorkRoll />
-                <Footer />
-            </Layout>
+            <>
+                <Layout>
+                    <WorkRoll />
+                    <Footer />
+                </Layout>
+            </>
         )
     }
 }
