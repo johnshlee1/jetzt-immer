@@ -31,7 +31,7 @@ collections:
         # summary: "{{fields.image}}"
         label_singular: "image"
         fields: [
-          {label: "Image", name: "image", widget: "image", media_folder: "static/img/work"}
+          {label: "Image", name: "image", widget: "image", media_folder: "/img/work"}
         ]
       - {label: "Background Color", name: "color", widget: "color"}
   - name: "pages"

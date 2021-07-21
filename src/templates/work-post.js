@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
-// import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 
 export const WorkPostTemplate = ({
@@ -35,7 +35,7 @@ export const WorkPostTemplate = ({
                 }}
             >
             </div> */}
-            {/* {image ? (
+            {image ? (
                 <div className="featured-image"
                 // style={styles.featuredImage}
                 >
@@ -46,7 +46,7 @@ export const WorkPostTemplate = ({
                         }}
                     />
                 </div>
-            ) : null} */}
+            ) : null}
             <PostContent description={description} />
         </section>
     )
@@ -69,7 +69,7 @@ const WorkPost = ({ data }) => {
                 }
                 title={post.frontmatter.title}
             // description={post.html}
-            // image={post.frontmatter.galleryImages.image}
+            // image={post.frontmatter.gallery.image}
             // contentComponent={HTMLContent}
             />
         </Layout>

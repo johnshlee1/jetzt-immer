@@ -11,7 +11,7 @@ const WorkPostPreview = ({ entry, widgetFor, getAsset }) => {
                 title={data.title}
                 description={data.description}
                 // description={widgetFor('body')}
-                image={getAsset(data.galleryImages.image)}
+                image={getAsset(data.gallery.image)}
                 color={data.color}
             />
         )

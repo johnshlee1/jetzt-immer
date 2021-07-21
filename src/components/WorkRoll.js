@@ -4,35 +4,91 @@ import { graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 // import Layout from './Layout'
 import Content, { HTMLContent } from './Content'
+// import intersectionobserver from ...
+// import { add } from 'lodash'
 // import styled from "styled-components";
 
+class Gallery extends React.Component {
+    constructor (props) {
+        super(props);
+        this.state = {
+            index: props.startImagePosition || 0,
+        }
+    }
+
+    render () {
+        const { gallery } = this.props
+        const length = gallery.length - 1
+        console.clear()
+        console.log(gallery)
+        console.log(this.state.index)
+
+        const handleNext = () => {
+            const newIndex = this.state.index + 1
+            this.setState({
+                index: this.state.index === length ? 0 : newIndex
+            })
+        }
+
+        const handlePrevious = () => {
+            const newIndex = this.state.index - 1
+            this.setState({
+                index: this.state.index === 0 ? length : newIndex
+            })
+        }
+
+        return (
+            <div>
+                {gallery.map((item, index) => (
+                    <div className="featured-image"
+                        style={{
+                            ...styles.featuredImage,
+                            display: index !== this.state.index ? "none" : "block"
+                        }}
+                    >
+                        <PreviewCompatibleImage
+                            imageInfo={{
+                                image: item.image,
+                                alt: `featured image thumbnail for post `,
+                            }}
+                        />
+                    </div>
+                ))}
+                <span>
+                    Image {this.state.index + 1}/{length + 1}
+                </span>
+
+                <div>
+                    <button onClick={() => handlePrevious()}>Previous</button>
+                    <button onClick={() => handleNext()}>Next</button>
+                </div>
+
+            </div>
+        )
+    }
+}
+
 class WorkRoll extends React.Component {
+
     render () {
         const { data } = this.props
-        const { edges: posts } = data.allMarkdownRemark
+        const { edges: works } = data.allMarkdownRemark
         const PostContent = HTMLContent || Content
-        let total = 0
-        let count = 0
-        // const imgTotal = () => {
-
-        // }
-        // const imgCount = () => {
-
-        // }
 
         return (
             <>
                 <main className="container" style={styles.container}>
-                    {posts &&
-                        posts.map(({ node: post }) => {
-                            const { gallery } = post.frontmatter
+                    {works &&
+                        works.map(({ node: work }) => {
+                            const { gallery } = work.frontmatter
+
                             return (
                                 <>
                                     <section
-                                        style={styles.section, { backgroundColor: post.frontmatter.color }}
+                                        style={styles.section, { backgroundColor: work.frontmatter.color }}
                                     >
                                         <article className="work-list-item content"
-                                            key={post.id}
+                                            key={work.id}
                                             style={styles.content}
                                         >
 
@@ -40,47 +96,28 @@ class WorkRoll extends React.Component {
                                                 style={styles.header}
                                             >
 
-                                                <h1 id={post.frontmatter.title.split(' ').join('_')}
+                                                <h1 id={work.frontmatter.title.split(' ').join('_')}
                                                     className="title"
                                                     style={styles.title}
                                                 >
 
-                                                    <a href={"#" + post.frontmatter.title.split(' ').join('_')}
+                                                    <a href={"#" + work.frontmatter.title.split(' ').join('_')}
                                                         style={styles.anchor}
                                                     >
-                                                        {post.frontmatter.title}
+                                                        {work.frontmatter.title}
                                                     </a>
 
                                                 </h1>
 
                                                 <PostContent
-                                                    description={post.frontmatter.description}
+                                                    description={work.frontmatter.description}
                                                     style={styles.description}
                                                 />
 
-                                                <span>
-                                                    Image {count}/{total}
-                                                </span>
-
                                             </header>
 
-                                            {!!gallery && gallery.map(({ image }) => (
-                                                <>
-                                                    {image ? (
-                                                        <div className="featured-image"
-                                                            style={styles.featuredImage}
-                                                        >
-                                                            <PreviewCompatibleImage
-                                                                imageInfo={{
-                                                                    image: image,
-                                                                    alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                                                                }}
-                                                            />
-                                                        </div>
-                                                    ) : null
-                                                    }
-                                                </>
-                                            ))}
+                                            <Gallery gallery={gallery} startImagePosition={0} />
+
                                         </article>
 
                                     </section>
@@ -94,6 +131,7 @@ class WorkRoll extends React.Component {
         )
     }
 }
+
 
 WorkRoll.propTypes = {
     data: PropTypes.shape({
