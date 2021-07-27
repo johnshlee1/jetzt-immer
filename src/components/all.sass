@@ -1,9 +1,61 @@
-// @import "~bulma/sass/utilities/initial-variables"
+
+=mobile
+    @media (min-width: 20em)  /* 320px smartphones, iPhone, portrait 480x320 phones */
+        @content
+
+=sm-tablet
+    @media (min-width: 31em)   /* 480px portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+        @content
+
+=md-tablet
+    @media (min-width: 41em)   /* 640px portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ 
+        @content
+
+=lg-tablet
+    @media (min-width: 61em)   /* 960px tablet, landscape iPad, lo-res laptops ands desktops */ 
+        @content
+
+=laptop-desktop
+    @media (min-width: 65em)  /* 1024px big landscape tablets, laptops, and desktops */ 
+        @content
+
+=hi-res
+    @media (min-width: 81em)  /* 1281px hi-res laptops and desktops */ 
+        @content
+
+=work-image-size    /* 2048 × 1463 */
+    width: 1067px
+    height: 683px
+
+    +mobile
+        width: 1280px
+        height: 820px
+
+    +sm-tablet
+        width: 1280px
+        height: 820px
+
+    +md-tablet
+        width: 1280px
+        height: 820px
+
+    +lg-tablet
+        width: 1280px
+        height: 820px
+
+    +laptop-desktop
+        width: 1280px
+        height: 820px
+
+    +hi-res
+        width: 1024px
+        height: 732px
 
 body
-    width: 100%
+    width: 100vw
     margin: 0
     padding: 0
+
 
 .container
     width: 100%
@@ -13,14 +65,25 @@ body
     margin: 0
     padding: 0
 
-// Config vars ---------------
+/* ------------  Config vars ---------------  */
 $main-red: #ED1C24
 $off-white: #F5F8E2
 $main-white: #333
 $main-black: #2b2523
-     
-// components/Navbar.js -----------
 
+
+/* ------------ templates/index-page.js ------------ */
+.landing-image
+    width: 100vw
+    height: 400px
+    background-size: cover
+    background-position: bottom
+    display: flex
+    justify-content: center
+    align-items: center
+
+     
+/* ------------ components/Navbar.js ----------- */
 nav
     width: 100%
     height: auto
@@ -65,24 +128,18 @@ nav > div
 
 .has-text-centered  
 
-// components/WorkRoll.js -----------
 
-//article
-//    width: 100%
-//    height: 100%
-//    margin: 0
-//    padding: 0
-//    position: relative
+/* ------------  components/WorkRoll.js ------------ */
 
-section
+article
     width: 100%
     height: 100vh
     padding: 0
     margin: 0
     display: grid
-    grid-template-columns: 1.5rem 15% 1fr minmax(min-content, max-content) 1.5rem
-    grid-template-rows: 1fr minmax(min-content, max-content)1.5rem
-    grid-template-areas: "mar-top mar-top mar-top mar-top mar-top" "mar-left header border gallery mar-right" "mar-bot mar-bot mar-bot mar-bot mar-bot"
+    grid-template-columns: 1.5rem 1fr auto 1.5rem
+    grid-template-rows: 1fr auto 1.5rem
+    grid-template-areas: "mar-top mar-top mar-top mar-top" "mar-left header gallery mar-right" "mar-bot mar-bot mar-bot mar-bot"
     position: relative
     scroll-snap-align: center
 
@@ -98,55 +155,71 @@ section
 .mar-right
     grid-area: mar-right
 
-.border
-    grid-area: border
+/* ----------------------------------- */
 
 header
     grid-area: header
-    display: flex
-    flex-direction: column
-    justify-content: space-between
+    display: grid
+    grid-template-columns: 1fr 10%
+    grid-template-rows: auto 1fr auto
+    grid-template-areas: "title border" "description border" "count border"
     width: 100%
     height: 100%
     margin: 0
     padding: 0
 
 header > h1
+    grid-area: title
     width: 100%
-    height: initial
-    margin: 0px
-    padding: 0px
+    margin: 0 0 15px 0
+    padding: 0
 
 header a
     width: 100%
-    height: 100%
-    color: #ED1C24
-    size: 15px
+    color: $main-red
+    font-size: 15px
     text-decoration: none
 
 .description
+    grid-area: description
     width: 100%
-    height: 100%
+    height: auto
     margin: 0
     padding: 0
-    color: #ED1C24
-    size: 14px
+
+.description p
+    width: 100%
+    height: auto
+    padding: 0
+    color: $main-red
+    font-size: 14px
 
 header span
+    grid-area: count
     width: 100%
-    height: initial
-    color: #ED1C24
+    height: auto
+    color: $main-red
+    font-size: 14px
+
+.border
+    grid-area: border
+    height: 100%
+    width: 100%
+
+/* ----------------------------------- */
 
 .gallery
     grid-area: gallery
-    width: 1067px
-    height: 683px
     margin: 0
     padding: 0
     position: relative
-    display: inherit
+    display: block
+    +work-image-size
 
-.featured-image
+.work-image-size
+    +work-image-size
+
+.work-image-box
     width: 100%
     height: 100%
     margin: 0
@@ -174,7 +247,7 @@ header span
 
 .cursor-style 
     font-size: 13px
-    color: #ED1C24
+    color: $main-red
     opacity: 0
     transform-origin: 100% 100%
     transform: translate(-50%, -50%)
@@ -183,35 +256,102 @@ header span
     z-index: 999
  
 
-// templates/index-page.js -----------
-.landing-image
+/* ------------  templates/info-page.js ------------- */
+
+.info-grid
     width: 100vw
-    height: 400px
-    background-size: cover
-    background-position: bottom
-    display: flex
-    justify-content: center
-    align-items: center
+    height: 100vh
+    display: grid
+    grid-template-columns: 1.5rem auto auto auto auto 1.5rem
+    grid-template-rows: 10rem auto auto 1.5rem
+    grid-template-areas: "top top top top top top" "left contact about cv image right" "left imprint developer space copyright right" "bot bot bot bot bot bot"
 
-// templates/info-page.js -----------
-.section
+.info-margin-top
+    grid-area: top
+    width: auto
+    width: auto
+/* ------------------------------------ */
+.contact-area
+    grid-area: contact
+    width: 204px
+    height: 317px
+    display: grid
+    grid-template-columns: auto
+    grid-template-rows: auto auto auto
+    grid-template-areas: "address" "name" "social"
 
-.container
-.columns
-.column
+.address
+    grid-area: address
+    width: auto
+    height: auto
 
-.full-width-image
-.margin-top-0
-.address-content
-.contact-content
-.social-content
-.about-content
-.cv-content
-.imprint-content
-.developer-content
-.copyright-content
+.name
+    grid-area: name
+    width: auto
+    height: auto
 
-// templates/footer-page.js -----------
+.social
+    grid-area: social
+    width: auto
+    height: auto
+
+/* ------------------------------------ */
+.about-area
+    grid-area: about
+    width: 365px
+    height: 436px
+
+.cv-area
+    grid-area: cv
+    width: 328px
+    height: 364px
+
+.info-image-area
+    grid-area: image
+    width: 299px
+    height: 362px
+/* ------------------------------------ */
+.info-margin-left
+    grid-area: left
+    width: auto
+    height: auto
+
+.info-margin-right
+    grid-area: right
+    width: auto
+    height: auto
+/* ------------------------------------ */
+.imprint-area
+    grid-area: imprint
+    width: auto
+    height: auto
+    
+.developer-area
+    grid-area: developer
+    width: auto
+    height: auto
+
+.space
+    grid-area: space
+    width: auto
+    height: auto
+
+.copyright-area
+    grid-area: copyright
+    width: auto
+    height: auto
+/* ------------------------------------ */
+.info-margin-bot
+    grid-area: bot
+    width: auto
+    height: auto
+
+.content
+
+.imprint
+    display: none
+
+/* ------------ templates/footer-page.js ------------- */
 .footer
 .has-text-white-ter
 .content
@@ -219,7 +359,8 @@ header span
 .rows
 .row
 
-//(my classes)
+
+/* ------------ (my classes) ------------ */
 .address-footer-content 
 .social-footer-content
 .contact-footer-content 
@@ -228,45 +369,29 @@ header span
 .copyright-footer-content 
 
 
-// Helper Classes -----------
+/* ------------ Helper Classes ------------ */
 .full-width-image-container
-  width: 100vw
-  height: 400px
-  position: relative
-  left: 50%
-  right: 50%
-  margin: 2em -50vw
-  background-size: cover
-  background-position: bottom
-  display: flex
-  justify-content: center
-  align-items: center
+    width: 100vw
+    height: 400px
+    position: relative
+    left: 50%
+    right: 50%
+    margin: 2em -50vw
+    background-size: cover
+    background-position: bottom
+    display: flex
+    justify-content: center
+    align-items: center
 
 
-// Override for use of svgs from https://simpleicons.org/
+/* ------------ Override for use of svgs from https://simpleicons.org/ ------------ */
 .icon svg
-  width: 1.5rem
-  height: 1.5rem
-  fill: currentColor
+    width: 1.5rem
+    height: 1.5rem
+    fill: currentColor
 .navbar-brand .navbar-item.logo
-  padding: 0 1rem
+    padding: 0 1rem
 footer.footer
-  padding: 1rem 0rem 0rem
-  background-color: transparent
+    padding: 1rem 0rem 0rem
+    background-color: transparent
 
-
-//@import "~bulma"
-
-
-// responsiveness
-// +tablet-only  
-//  .blog-list-item .featured-thumbnail
-//    flex-basis: 50%
-
-//+mobile
-//  .blog-list-item header
-//    display: block
-//  .blog-list-item .featured-thumbnail
-//    text-align: center
-//    max-width: 70%
-//    margin: 0 0 1em

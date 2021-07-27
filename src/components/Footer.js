@@ -47,7 +47,7 @@ export default () => (
     <StaticQuery
         query={graphql`
                 query FooterQuery {
-                    markdownRemark(frontmatter: { templateKey: { eq: "footer-page" } }) {
+                    markdownRemark(frontmatter: { templateKey: { eq: "info-page" } }) {
                         frontmatter {
                             address
                             contact

@@ -5,7 +5,6 @@ import { SlidesControl, SlidesPreview } from "./Slides";
 
 import InfoPagePreview from './preview-templates/InfoPagePreview'
 import WorkPostPreview from './preview-templates/WorkPostPreview'
-import FooterPagePreview from './preview-templates/FooterPagePreview'
 import IndexPagePreview from './preview-templates/IndexPagePreview'
 
 CMS.registerMediaLibrary(uploadcare)
@@ -14,5 +13,4 @@ CMS.registerWidget("slides", SlidesControl, SlidesPreview);
 
 CMS.registerPreviewTemplate('index', IndexPagePreview)
 CMS.registerPreviewTemplate('info', InfoPagePreview)
-CMS.registerPreviewTemplate('footer', FooterPagePreview)
 CMS.registerPreviewTemplate('work', WorkPostPreview)

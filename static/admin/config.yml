@@ -28,14 +28,11 @@ collections:
         name: "gallery"
         widget: "list"
         allow_add: true
-        # summary: "{{fields.image}}"
         label_singular: "image"
         fields: [
           {label: "Image", name: "image", widget: "image", media_folder: "img/work"}
         ]
       - {label: "Background Color", name: "color", widget: "color"}
-      # - {label: "Cursor Next", name: "cursorNext", widget: "image", media_folder: "img/cursor" }
-      # - {label: "Cursor Prev", name: "cursorPrev", widget: "image", media_folder: "img/cursor" }
   - name: "pages"
     label: "Pages"
     files:
@@ -44,8 +41,8 @@ collections:
         name: "index"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
-          - {label: "Site Title", name: "title", widget: "string"}
-          - {label: "Site Description", name: "description", widget: "string"}
+          - {label: "Site Title", name: "title", widget: "string", default: "jetzt-immer-studio"}
+          - {label: "Site Description", name: "description", widget: "string", default: "jetzt-immer-studio"}
           - {label: "Image", name: "image", widget: "image"}
       - file: "src/pages/info/index.md"
         label: "Info Page"
@@ -53,22 +50,11 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "info-page"}
           - {label: "image", name: "image", widget: "image"}
-          - {label: "Address", name: "address", widget: "markdown"}
-          - {label: "Contact", name: "contact", widget: "markdown"}
-          - {label: "Social", name: "social", widget: "markdown"}
-          - {label: "About", name: "about", widget: "markdown"}
-          - {label: "CV", name: "cv", widget: "markdown"}
-          - {label: "Imprint", name: "imprint", widget: "markdown"}
-          - {label: "Developer", name: "developer", widget: "markdown"}
-          - {label: "Copyright", name: "copyright", widget: "markdown"}
-      - file: "src/pages/footer/index.md"
-        label: "Footer Page"
-        name: "footer"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "footer-page"}
-          - {label: "Address", name: "address", widget: "markdown"}
-          - {label: "Contact", name: "contact", widget: "markdown"}
-          - {label: "Social", name: "social", widget: "markdown"}
-          - {label: "Imprint", name: "imprint", widget: "markdown"}
-          - {label: "Developer", name: "developer", widget: "markdown"}
-          - {label: "Copyright", name: "copyright", widget: "markdown"}
+          - {label: "Address", name: "address", widget: "markdown", default: ""}
+          - {label: "Contact", name: "contact", widget: "markdown", default: ""}
+          - {label: "Social", name: "social", widget: "markdown", default: ""}
+          - {label: "About", name: "about", widget: "markdown", default: ""}
+          - {label: "CV", name: "cv", widget: "markdown", default: ""}
+          - {label: "Imprint", name: "imprint", widget: "markdown", default: ""}
+          - {label: "Developer", name: "developer", widget: "markdown", default: "John SH Lee"}
+          - {label: "Copyright", name: "copyright", widget: "markdown", default: "jetzt-immer-studio"}

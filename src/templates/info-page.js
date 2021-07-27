@@ -21,70 +21,95 @@ export const InfoPageTemplate = ({
 
     return (
         <>
-            <div className="container">
-                <div className="columns" style={styles.columns}>
-                    <section className="column" style={styles.column}>
-                        <PageContent
-                            className="Content"
-                            address={address}
-                        />
-                    </section>
-                    <section className="column" style={styles.column}>
-                        <PageContent
-                            contact={contact}
-                        />
-                    </section>
-                    <section className="column" style={styles.column}>
-                        <PageContent
-                            social={social}
-                        />
-                    </section>
-                    <section className="column" style={styles.column}>
-                        <PageContent
-                            about={about}
-                        />
-                    </section>
-                    <section className="column" style={styles.column}>
-                        <PageContent
-                            cv={cv}
-                        />
-                    </section>
-                    <section className="column" style={styles.column}>
-                        <PageContent
-                            imprint={imprint}
-                        />
-                    </section>
-                    <section className="column" style={styles.column}>
-                        <PageContent
-                            developer={developer}
-                        />
-                    </section>
-                    <section className="column" style={styles.column}>
-                        <PageContent
-                            copyright={copyright}
-                        />
-                    </section>
-                    <section className="column" style={styles.column}>
-                        {/* <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
+            <div className="info-grid" >
+
+                <div className="info-mar-top"></div>
+
+                <section className="contact-area">
+                    <PageContent
+                        className="address content"
+                        address={address}
+                    />
+                    <PageContent
+                        className="name content"
+                        contact={contact}
+                    />
+                    <PageContent
+                        className="social content"
+                        social={social}
+                    />
+                </section>
+
+                <section className="about-area" >
+                    <PageContent
+                        className="about content"
+                        about={about}
+                    />
+                </section>
+
+                <section className="cv-area" >
+                    <PageContent
+                        className="cv content"
+                        cv={cv}
+                    />
+                </section>
+
+                <section className="info-image-area" >
+                    {/* <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
                                 {title}
                             </h2> */}
-                        {/* <img src={image} alt="jetzt-immer" style={{ width: '88px' }} /> */}
-                        {image ? (
-                            <div className="featured-image"
-                            // style={styles.featuredImage}
-                            >
-                                <PreviewCompatibleImage
-                                    imageInfo={{
-                                        image: image,
-                                        alt: `jetzt-immer studio picture`,
-                                    }}
-                                />
-                            </div>
-                        ) : null
-                        }
-                    </section >
-                </div>
+                    {/* <img src={image} alt="jetzt-immer" style={{ width: '88px' }} /> */}
+                    {image ? (
+                        <div className="info-image-box"
+                        // style={styles.featuredImage}
+                        >
+                            <PreviewCompatibleImage
+                                imageInfo={{
+                                    image: image,
+                                    alt: `jetzt-immer studio picture`,
+                                }}
+                                className="info-image-size"
+                            />
+                        </div>
+                    ) : null
+                    }
+                </section >
+
+                <div className="info-margin-left"></div>
+                <div className="info-margin-right"></div>
+
+                <section className="imprint-area">
+                    <span>Imprint</span>
+                </section>
+
+                <section className="developer-area" >
+                    <PageContent
+                        className="developer content"
+                        developer={developer}
+                    />
+                </section>
+
+                <div className="space"></div>
+
+                <section className="copyright-area" >
+                    <PageContent
+                        className="copyright content"
+                        copyright={copyright}
+                    />
+                </section>
+
+                <div className="info-margin-bot"></div>
+
             </div>
+
+            <section className="imprint-box" >
+                <PageContent
+                    className="imprint content"
+                    imprint={imprint}
+                />
+            </section>
+
+
         </>
     )
 }
@@ -96,7 +121,6 @@ const InfoPage = ({ data }) => {
     return (
         <Layout>
             <InfoPageTemplate
-                // contentComponent={HTMLContent}
                 // title={post.frontmatter.title}
                 image={post.frontmatter.image}
                 address={post.frontmatter.address}
@@ -136,18 +160,4 @@ export const infoPageQuery = graphql`
             }
         }
     }
-            `
-
-export const styles = {
-    // container: {
-    //     width: '100%',
-    // },
-    columns: {
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'row',
-    },
-    column: {
-        width: '100%',
-    }
-}
+`

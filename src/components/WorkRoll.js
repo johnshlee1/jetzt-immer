@@ -58,15 +58,17 @@ class Gallery extends React.Component {
                             {title}
                         </a>
                     </h1>
+
                     <PostContent
                         className="description"
                         description={description}
                     />
+
                     <span>
                         Image {imgIndex + 1}/{length + 1}
                     </span>
+                    <div className="border"></div>
                 </header>
-                <div className="border"></div>
 
                 {/* gallery -------------------------------------------------------------------- */}
                 <div className="gallery">
@@ -77,7 +79,7 @@ class Gallery extends React.Component {
                     </div>
 
                     {gallery.map((item, index) => (
-                        <div className="featured-image"
+                        <div className="work-image-box"
                             style={{
                                 display: index !== imgIndex ? "none" : "block"
                             }}
@@ -87,7 +89,7 @@ class Gallery extends React.Component {
                                     image: item.image,
                                     alt: `image of ${title}`,
                                 }}
-                            // className="image"
+                                className="work-image-size"
                             />
 
                         </div>
@@ -104,7 +106,6 @@ class Work extends React.Component {
     render () {
         const { data } = this.props
         const { edges: works } = data.allMarkdownRemark
-        // const PostContent = HTMLContent || Content
 
         return (
             <>
@@ -119,7 +120,7 @@ class Work extends React.Component {
 
                         return (
                             <>
-                                <section key={work.id} style={{ backgroundColor: color }}>
+                                <article key={work.id} style={{ backgroundColor: color }}>
                                     <Gallery
                                         title={title}
                                         description={description}
@@ -128,7 +129,7 @@ class Work extends React.Component {
                                         cursorNext={cursorNext}
                                         cursorPrev={cursorPrev}
                                     />
-                                </section>
+                                </article>
                             </>
                         )
                     }

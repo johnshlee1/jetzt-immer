@@ -101,15 +101,15 @@ const Content = ({
     className
 }) => (
     <>
-        {description ? <div className={"description-" + className} style={style}>{description}</div> : null}
-        {address ? <div className={"address-" + className}>{address}</div> : null}
-        {contact ? <div className={"contact-" + className}>{contact}</div> : null}
-        {social ? <div className={"social-" + className}>{social}</div> : null}
-        {about ? <div className={"about-" + className}>{about}</div> : null}
-        {cv ? <div className={"cv-" + className}>{cv}</div> : null}
-        {imprint ? <div className={"imprint-" + className}>{imprint}</div> : null}
-        {developer ? <div className={"developer-" + className}>{developer}</div> : null}
-        {copyright ? <div className={"copyright-" + className}>{copyright}</div> : null}
+        {description ? <div className={"content " + className} style={style}>{description}</div> : null}
+        {address ? <div className={"content " + className}>{address}</div> : null}
+        {contact ? <div className={"content " + className}>{contact}</div> : null}
+        {social ? <div className={"content " + className}>{social}</div> : null}
+        {about ? <div className={"content " + className}>{about}</div> : null}
+        {cv ? <div className={"content " + className}>{cv}</div> : null}
+        {imprint ? <div className={"content " + className}>{imprint}</div> : null}
+        {developer ? <div className={"content " + className}>{developer}</div> : null}
+        {copyright ? <div className={"conetnt " + className}>{copyright}</div> : null}
     </>
 )
 
