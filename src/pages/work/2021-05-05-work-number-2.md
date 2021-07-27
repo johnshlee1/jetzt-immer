@@ -8,7 +8,7 @@ gallery:
     name: image
     widget: image
     media_folder: /img/work
-    image: /img/work/screen-08-07-2020_202413.png
-  - image: /img/work/machado.jpg
+    image: img/work/img_7951.jpg
+  - image: img/work/img_7954_4.jpg
 color: "#3d4427"
 ---

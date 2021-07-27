@@ -14,6 +14,7 @@ export const HTMLContent = ({
     imprint,
     developer,
     copyright,
+    style,
     className
 }) => {
 
@@ -73,15 +74,15 @@ export const HTMLContent = ({
 
     return (
         <>
-            {description ? <div className={"description-" + "HTMLContent"} dangerouslySetInnerHTML={{ __html: description }} /> : null}
-            {address ? <div className={"address-" + "HTMLContent"} dangerouslySetInnerHTML={{ __html: address }} /> : null}
-            {contact ? <div className={"contact-" + "HTMLContent"} dangerouslySetInnerHTML={{ __html: contact }} /> : null}
-            {social ? <div className={"social-" + "HTMLContent"} dangerouslySetInnerHTML={{ __html: social }} /> : null}
-            {about ? <div className={"about-" + "HTMLContent"} dangerouslySetInnerHTML={{ __html: about }} /> : null}
-            {cv ? <div className={"cv-" + "HTMLContent"} dangerouslySetInnerHTML={{ __html: cv }} /> : null}
-            {imprint ? <div className={"imprint-" + "HTMLContent"} dangerouslySetInnerHTML={{ __html: imprint }} /> : null}
-            {developer ? <div className={"developer-" + "HTMLContent"} dangerouslySetInnerHTML={{ __html: developer }} /> : null}
-            {copyright ? <div className={"copyright-" + "HTMLContent"} dangerouslySetInnerHTML={{ __html: copyright }} /> : null}
+            {description ? <div className={className + " HTMLContent"} style={style} dangerouslySetInnerHTML={{ __html: description }} /> : null}
+            {address ? <div className={className + " HTMLContent"} dangerouslySetInnerHTML={{ __html: address }} /> : null}
+            {contact ? <div className={className + " HTMLContent"} dangerouslySetInnerHTML={{ __html: contact }} /> : null}
+            {social ? <div className={className + " HTMLContent"} dangerouslySetInnerHTML={{ __html: social }} /> : null}
+            {about ? <div className={className + " HTMLContent"} dangerouslySetInnerHTML={{ __html: about }} /> : null}
+            {cv ? <div className={className + " HTMLContent"} dangerouslySetInnerHTML={{ __html: cv }} /> : null}
+            {imprint ? <div className={className + " HTMLContent"} dangerouslySetInnerHTML={{ __html: imprint }} /> : null}
+            {developer ? <div className={className + " HTMLContent"} dangerouslySetInnerHTML={{ __html: developer }} /> : null}
+            {copyright ? <div className={className + " HTMLContent"} dangerouslySetInnerHTML={{ __html: copyright }} /> : null}
         </>
     )
 }
@@ -96,10 +97,11 @@ const Content = ({
     imprint,
     developer,
     copyright,
+    style,
     className
 }) => (
     <>
-        {description ? <div className={"description-" + className}>{description}</div> : null}
+        {description ? <div className={"description-" + className} style={style}>{description}</div> : null}
         {address ? <div className={"address-" + className}>{address}</div> : null}
         {contact ? <div className={"contact-" + className}>{contact}</div> : null}
         {social ? <div className={"social-" + className}>{social}</div> : null}

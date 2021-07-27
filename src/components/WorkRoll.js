@@ -2,11 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
-// import Layout from './Layout'
 import Content, { HTMLContent } from './Content'
+import Cursor from './Cursor'
 // import intersectionobserver from ...
 // import { add } from 'lodash'
-// import styled from "styled-components";
 
 class Gallery extends React.Component {
     constructor (props) {
@@ -17,116 +16,138 @@ class Gallery extends React.Component {
     }
 
     render () {
+        const { title } = this.props
         const { gallery } = this.props
+        const { description } = this.props
         const length = gallery.length - 1
-        console.clear()
-        console.log(gallery)
-        console.log(this.state.index)
+        const imgIndex = this.state.index
+        const PostContent = HTMLContent || Content
 
         const handleNext = () => {
-            const newIndex = this.state.index + 1
+            const newIndex = imgIndex + 1
             this.setState({
-                index: this.state.index === length ? 0 : newIndex
+                index: imgIndex === length ? 0 : newIndex
             })
         }
 
         const handlePrevious = () => {
-            const newIndex = this.state.index - 1
+            const newIndex = imgIndex - 1
             this.setState({
-                index: this.state.index === 0 ? length : newIndex
+                index: imgIndex === 0 ? length : newIndex
             })
         }
 
+        // const mouseEnter = (e) => {
+        //     const style = {
+        //         top: e.clientY - cursor.height() / 2,
+        //         left: e.clientX - cursor.width() / 2
+        //     }
+        //     console.log("mouseEnter")
+        // }
+
         return (
-            <div>
-                {gallery.map((item, index) => (
-                    <div className="featured-image"
-                        style={{
-                            ...styles.featuredImage,
-                            display: index !== this.state.index ? "none" : "block"
-                        }}
-                    >
-                        <PreviewCompatibleImage
-                            imageInfo={{
-                                image: item.image,
-                                alt: `featured image thumbnail for post `,
-                            }}
-                        />
+            <>
+                {/* header--------------------------------------------------------------------- */}
+                <div id={title.split(' ').join('_')} className="mar-top"></div>
+                <div className="mar-left"></div>
+                <div className="mar-right"></div>
+
+                <header>
+                    <h1>
+                        <a href={"#" + title.split(' ').join('_')}>
+                            {title}
+                        </a>
+                    </h1>
+                    <PostContent
+                        className="description"
+                        description={description}
+                    />
+                    <span>
+                        Image {imgIndex + 1}/{length + 1}
+                    </span>
+                </header>
+                <div className="border"></div>
+
+                {/* gallery -------------------------------------------------------------------- */}
+                <div className="gallery">
+
+                    <div className="prev-next">
+                        <Cursor text="Previous" onClick={handlePrevious} />
+                        <Cursor text="Next" onClick={handleNext} />
                     </div>
-                ))}
-                <span>
-                    Image {this.state.index + 1}/{length + 1}
-                </span>
 
-                <div>
-                    <button onClick={() => handlePrevious()}>Previous</button>
-                    <button onClick={() => handleNext()}>Next</button>
+                    {gallery.map((item, index) => (
+                        <div className="featured-image"
+                            style={{
+                                display: index !== imgIndex ? "none" : "block"
+                            }}
+                        >
+                            <PreviewCompatibleImage
+                                imageInfo={{
+                                    image: item.image,
+                                    alt: `image of ${title}`,
+                                }}
+                            // className="image"
+                            />
+
+                        </div>
+                    ))}
                 </div>
+                <div className="mar-bot"></div>
 
-            </div>
+            </>
         )
     }
 }
+
+class Work extends React.Component {
+    render () {
+        const { data } = this.props
+        const { edges: works } = data.allMarkdownRemark
+        // const PostContent = HTMLContent || Content
+
+        return (
+            <>
+                {works &&
+                    works.map(({ node: work }) => {
+                        const { gallery } = work.frontmatter
+                        const { title } = work.frontmatter
+                        const { description } = work.frontmatter
+                        const { color } = work.frontmatter
+                        const { cursorNext } = work.frontmatter
+                        const { cursorPrev } = work.frontmatter
+
+                        return (
+                            <>
+                                <section key={work.id} style={{ backgroundColor: color }}>
+                                    <Gallery
+                                        title={title}
+                                        description={description}
+                                        gallery={gallery}
+                                        startImagePosition={0}
+                                        cursorNext={cursorNext}
+                                        cursorPrev={cursorPrev}
+                                    />
+                                </section>
+                            </>
+                        )
+                    }
+                    )}
+            </>
+        )
+    }
+}
+
+
 
 class WorkRoll extends React.Component {
 
     render () {
         const { data } = this.props
-        const { edges: works } = data.allMarkdownRemark
-        const PostContent = HTMLContent || Content
 
         return (
             <>
-                <main className="container" style={styles.container}>
-                    {works &&
-                        works.map(({ node: work }) => {
-                            const { gallery } = work.frontmatter
-
-                            return (
-                                <>
-                                    <section
-                                        style={styles.section, { backgroundColor: work.frontmatter.color }}
-                                    >
-                                        <article className="work-list-item content"
-                                            key={work.id}
-                                            style={styles.content}
-                                        >
-
-                                            <header
-                                                style={styles.header}
-                                            >
-
-                                                <h1 id={work.frontmatter.title.split(' ').join('_')}
-                                                    className="title"
-                                                    style={styles.title}
-                                                >
-
-                                                    <a href={"#" + work.frontmatter.title.split(' ').join('_')}
-                                                        style={styles.anchor}
-                                                    >
-                                                        {work.frontmatter.title}
-                                                    </a>
-
-                                                </h1>
-
-                                                <PostContent
-                                                    description={work.frontmatter.description}
-                                                    style={styles.description}
-                                                />
-
-                                            </header>
-
-                                            <Gallery gallery={gallery} startImagePosition={0} />
-
-                                        </article>
-
-                                    </section>
-                                </>
-                            )
-                        }
-                        )})
-
-                </main>
+                <Work data={data} />
             </>
         )
     }
@@ -176,56 +197,6 @@ export default () => (
         }
       }
     `}
-        render={(data, count) => <WorkRoll data={data} count={count} />}
+        render={(data) => <WorkRoll data={data} />}
     />
 )
-
-export const styles = {
-    // container: {
-    //     width: '100%',
-    //     margin: '0px',
-    //     padding: '0px',
-    //     position: 'relative',
-    // },
-    section: {
-        width: '90%',
-        margin: '10px',
-        padding: '10px',
-    },
-    content: {
-        width: '100%',
-        margin: '10px',
-        padding: '10px',
-        display: 'flex',
-        flexDirection: 'row',
-    },
-    header: {
-        width: '20%',
-        margin: '0',
-        padding: '0',
-        display: 'flex',
-        flexDirection: 'column',
-    },
-    title: {
-        width: '100%',
-    },
-    anchor: {
-        width: '100%',
-        color: '#ED1C24',
-        size: '15px',
-        textDecoration: 'none'
-    },
-    featuredImage: {
-        width: '1067px',
-        height: '683px',
-        margin: '0',
-        padding: '0',
-    },
-    description: {
-        width: '100%',
-        margin: '0',
-        padding: '0',
-        color: '#ED1C24',
-        size: '14px',
-    }
-}

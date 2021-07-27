@@ -9,8 +9,8 @@ gallery:
     name: image
     widget: image
     media_folder: /img/work
-    image: /img/work/170604.09.정읍.황토현전적지_-203-.jpg
-  - image: /img//work/2020bookposter.jpg
-  - image: /img/work/screen-08-07-2020_202413.png
+    image: img/work/åbb-9.jpg
+  - image: img/work/åbb-4.jpg
+  - image: img/work/åbb-16.jpg
 color: "#9a8137"
 ---

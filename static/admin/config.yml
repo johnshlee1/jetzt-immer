@@ -34,6 +34,8 @@ collections:
           {label: "Image", name: "image", widget: "image", media_folder: "img/work"}
         ]
       - {label: "Background Color", name: "color", widget: "color"}
+      # - {label: "Cursor Next", name: "cursorNext", widget: "image", media_folder: "img/cursor" }
+      # - {label: "Cursor Prev", name: "cursorPrev", widget: "image", media_folder: "img/cursor" }
   - name: "pages"
     label: "Pages"
     files:

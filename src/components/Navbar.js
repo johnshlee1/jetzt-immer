@@ -8,6 +8,7 @@ const Navbar = class extends React.Component {
         this.state = {
             active: false,
             navBarActiveClass: '',
+            navBarActiveItem: '',
         }
     }
 
@@ -31,17 +32,23 @@ const Navbar = class extends React.Component {
         )
     }
 
+    toggleNavItem = () => {
+        this.setState({
+            navBarActiveItem: this.state.navBarActiveItem !== 'work' ? 'work' : 'info'
+        })
+    }
+
+
     render () {
         return (
             <nav
-                className="navbar"
                 role="navigation"
                 aria-label="main-navigation"
             // style={{
             //     backgroundColor: "transparent",
             // }}
             >
-                <div className="container">
+                <div>
                     <div className="navbar-brand">
                         <Link to="/" className="navbar-item" title="Logo">
                             {/* <img src={studioji} alt="Kaldi" style={{ width: '88px' }} /> */}
@@ -63,13 +70,19 @@ const Navbar = class extends React.Component {
                         id="navMenu"
                         className={`navbar-menu ${this.state.navBarActiveClass}`}
                     >
-                        <div className="navbar-start">
-                            <Link className="navbar-item" to="/info">
-                                Info
+
+                        <div className="navbar-start"
+                        // onClick={() =>this.toggleNavItem()}
+                        >
+                            <Link className="navbar-item"
+                                to={this.state.navBarActiveItem !== 'work' ? "/work" : "/info"}
+                                onClick={() => this.toggleNavItem()}
+                            >
+                                {this.state.navBarActiveItem !== 'work' ? 'Work' : 'Info'}
                             </Link>
-                            <Link className="navbar-item" to="/work">
+                            {/* <Link className="navbar-item" to="/work">
                                 Work
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
                 </div>
