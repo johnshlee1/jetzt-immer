@@ -1,0 +1,96 @@
+@import "sass/media-query"
+@import "sass/colors"
+
+
+.info-grid
+    width: 100vw
+    height: 100vh
+    display: grid
+    grid-template-columns: 1.5rem auto auto auto auto 1.5rem
+    grid-template-rows: 10rem auto auto 1.5rem
+    grid-template-areas: "top top top top top top" "left contact about cv image right" "left imprint developer space copyright right" "bot bot bot bot bot bot"
+
+.info-margin-top
+    grid-area: top
+    width: auto
+    width: auto
+/* ------------------------------------ */
+.contact-area
+    grid-area: contact
+    width: 204px
+    height: 317px
+    display: grid
+    grid-template-columns: auto
+    grid-template-rows: auto auto auto
+    grid-template-areas: "address" "name" "social"
+
+.address
+    grid-area: address
+    width: auto
+    height: auto
+
+.name
+    grid-area: name
+    width: auto
+    height: auto
+
+.social
+    grid-area: social
+    width: auto
+    height: auto
+
+/* ------------------------------------ */
+.about-area
+    grid-area: about
+    width: 365px
+    height: 436px
+
+.cv-area
+    grid-area: cv
+    width: 328px
+    height: 364px
+
+.info-image-area
+    grid-area: image
+    width: 299px
+    height: 362px
+/* ------------------------------------ */
+.info-margin-left
+    grid-area: left
+    width: auto
+    height: auto
+
+.info-margin-right
+    grid-area: right
+    width: auto
+    height: auto
+/* ------------------------------------ */
+.imprint-area
+    grid-area: imprint
+    width: auto
+    height: auto
+    
+.developer-area
+    grid-area: developer
+    width: auto
+    height: auto
+
+.space
+    grid-area: space
+    width: auto
+    height: auto
+
+.copyright-area
+    grid-area: copyright
+    width: auto
+    height: auto
+/* ------------------------------------ */
+.info-margin-bot
+    grid-area: bot
+    width: auto
+    height: auto
+
+.content
+
+.imprint
+    display: none
