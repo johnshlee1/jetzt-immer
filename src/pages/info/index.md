@@ -1,39 +1,47 @@
 ---
-
-path: /info
-templateKey: info-page
-image: /img/170604.09.정읍.황토현전적지_-203-.jpg
-address: |-
-  *Studio jetzt-immer* 
-  Weisestraße 27 
-  12049 Berlin 
-  Germany
 contact: |-
-  Siri Lee Lindskrog 
-  Graphic & Type designer
-  s@jetzt-immer.studio 
+  Siri Lee Lindskrog \
+  Graphic & Type designer\
+  s@jetzt-immer.studio \
   +49 17676981955 
 
-  Amanda-Li Kollberg 
-  Graphic Designer
-  a@jetzt-immer.studio 
-  +45 53144388 
+  Amanda-Li Kollberg \
+  Graphic Designer\
+  a@jetzt-immer.studio \
+  +45 53144388
+path: /info
+templateKey: info-page
+image: /img/åbb-4.jpg
+address: |-
+  *Studio jetzt-immer* \
+  Weisestraße 27 \
+  12049 Berlin \
+  Germany
 social: "[Instagram](https://instagram.com)"
-about: "Studio jetzt—immer is a Berlin based design studio, specialised in
-  editorial design, visual identity, typography driven design and concept
-  development. We mainly work within culture, art and social issues. The studio
-  was founded in Copenhagen in 2014 by Amanda-Li Kollberg and Siri Lee
-  Lindskrog. Our clients include: BODE Gallery, Forening for Boghåndværk,
-  Anxiety Empire Magazine, KADK — The Royal Danish Academy of Fine Arts Schools
-  of Architecture, Design and Conservation, Afart Magazine, Kosmos Magazine,
-  Herlev, Frederikssund & Egedal Libraries, European Glass Context, NW Gallery,
-  Antalis Papers, Artland, Rosinante&Co, Forlaget Silkefyret, DokumentART Film
-  Festival, Detour Urban Dance Festival, Insitu Site-Specific Dance Festival,
-  The Danish Music Schools."
-cv: TALKS Krabbesholm Højskole, Denmark All Heart No Hype, panel discussion,
-  Berlin Type Thursday, Berlin Conversas, Berlin PRESS Eye on Design Adobe 99U
-  Page Magazine TEACHING Krabbesholm Højskole, Denmark ESDIP, Berlin Godsbanen
-  (Workshop), Denmark
+about: >-
+  Studio jetzt—immer is a Berlin based design studio, specialised in editorial
+  design, visual identity, typography driven design and concept development. We
+  mainly work within culture, art and social issues. The studio was founded in
+  Copenhagen in 2014 by Amanda-Li Kollberg and Siri Lee Lindskrog. 
+
+
+  Our clients include: BODE Gallery, Forening for Boghåndværk, Anxiety Empire Magazine, KADK — The Royal Danish Academy of Fine Arts Schools of Architecture, Design and Conservation, Afart Magazine, Kosmos Magazine, Herlev, Frederikssund & Egedal Libraries, European Glass Context, NW Gallery, Antalis Papers, Artland, Rosinante&Co, Forlaget Silkefyret, DokumentART Film Festival, Detour Urban Dance Festival, Insitu Site-Specific Dance Festival, The Danish Music Schools.
+cv: |-
+  TALKS \
+  Krabbesholm Højskole, Denmark \
+  All Heart No Hype, panel discussion, Berlin \
+  Type Thursday, Berlin \
+  Conversas, Berlin 
+
+  PRESS \
+  Eye on Design \
+  Adobe 99U \
+  Page Magazine 
+
+  TEACHING \
+  Krabbesholm Højskole, Denmark \
+  ESDIP, Berlin \
+  Godsbanen (Workshop), Denmark
 imprint: Haftung für Inhalte Die Inhalte meiner Seiten wurden mit größter
   Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der
   Inhalte kann ich jedoch keine Gewähr übernehmen. Als Diensteanbieter bin ich
@@ -100,6 +108,6 @@ imprint: Haftung für Inhalte Die Inhalte meiner Seiten wurden mit größter
   erklären Sie sich mit der Bearbeitung der über Sie erhobenen Daten durch
   Google in der zuvor beschriebenen Art und Weise und zu dem zuvor benannten
   Zweck einverstanden.
-developer: "Web development: John Lee"
+developer: "Web development: [John Lee](https://johnshlee.com)"
 copyright: © 2021 - Studio jetzt-immer
 ---

@@ -10,7 +10,7 @@ backend:
 
 local_backend: true
 
-media_folder: static/img
+media_folder: /static/img
 public_folder: /img
 
 collections:
@@ -21,8 +21,8 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "work-post"}
+      - {label: "Background Color", name: "color", widget: "color"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "markdown"}
       - label: "Gallery"
         name: "gallery"
@@ -32,7 +32,7 @@ collections:
         fields: [
           {label: "Image", name: "image", widget: "image", media_folder: "img/work"}
         ]
-      - {label: "Background Color", name: "color", widget: "color"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
   - name: "pages"
     label: "Pages"
     files:

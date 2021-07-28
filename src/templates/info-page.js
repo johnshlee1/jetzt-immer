@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 // import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
@@ -15,42 +15,39 @@ export const InfoPageTemplate = ({
     imprint,
     developer,
     copyright,
-    contentComponent
 }) => {
     const PageContent = HTMLContent || Content
-
+    const [display, setDisplay] = useState('off');
     return (
         <>
             <div className="info-grid" >
 
-                <div className="info-mar-top"></div>
-
                 <section className="contact-area">
                     <PageContent
                         className="address content"
-                        address={address}
+                        content={address}
                     />
                     <PageContent
                         className="name content"
-                        contact={contact}
+                        content={contact}
                     />
                     <PageContent
                         className="social content"
-                        social={social}
+                        content={social}
                     />
                 </section>
 
                 <section className="about-area" >
                     <PageContent
                         className="about content"
-                        about={about}
+                        content={about}
                     />
                 </section>
 
                 <section className="cv-area" >
                     <PageContent
                         className="cv content"
-                        cv={cv}
+                        content={cv}
                     />
                 </section>
 
@@ -60,52 +57,54 @@ export const InfoPageTemplate = ({
                             </h2> */}
                     {/* <img src={image} alt="jetzt-immer" style={{ width: '88px' }} /> */}
                     {image ? (
-                        <div className="info-image-box"
-                        // style={styles.featuredImage}
-                        >
-                            <PreviewCompatibleImage
-                                imageInfo={{
-                                    image: image,
-                                    alt: `jetzt-immer studio picture`,
-                                }}
-                                className="info-image-size"
-                            />
-                        </div>
+
+                        <PreviewCompatibleImage
+                            imageInfo={{
+                                image: image,
+                                alt: `jetzt-immer studio picture`,
+                            }}
+                            className="info-image-size"
+                        />
+
                     ) : null
                     }
                 </section >
 
-                <div className="info-margin-left"></div>
-                <div className="info-margin-right"></div>
-
                 <section className="imprint-area">
-                    <span>Imprint</span>
+                    <p>
+                        <button
+                            onClick={() => { display === 'off' ? setDisplay('on') : setDisplay('off') }}
+                        >
+                            Imprint
+                        </button>
+                    </p>
                 </section>
 
                 <section className="developer-area" >
                     <PageContent
                         className="developer content"
-                        developer={developer}
+                        content={developer}
                     />
                 </section>
-
-                <div className="space"></div>
 
                 <section className="copyright-area" >
                     <PageContent
                         className="copyright content"
-                        copyright={copyright}
+                        content={copyright}
                     />
                 </section>
 
-                <div className="info-margin-bot"></div>
-
             </div>
 
-            <section className="imprint-box" >
+            <section
+                className="imprint-box"
+                style={{
+                    display: display === 'off' ? 'none' : 'block'
+                }}
+            >
                 <PageContent
                     className="imprint content"
-                    imprint={imprint}
+                    content={imprint}
                 />
             </section>
 
@@ -139,24 +138,24 @@ const InfoPage = ({ data }) => {
 export default InfoPage
 
 export const infoPageQuery = graphql`
-            query InfoPageTemplate {
-                markdownRemark(frontmatter: {templateKey: {eq: "info-page" } }) {
-                frontmatter {
+    query InfoPageTemplate {
+        markdownRemark(frontmatter: {templateKey: {eq: "info-page" } }) {
+            frontmatter {
                 address
                 contact
-            social
-            about
-            cv
-            image {
-                childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-            }
+                social
+                about
+                cv
+                image {
+                    childImageSharp {
+                        fluid(maxWidth: 1024, quality: 100, fit: COVER) {
+                            ...GatsbyImageSharpFluid
+                        }
                     }
                 }
-            imprint
-            developer
-            copyright
+                imprint
+                developer
+                copyright
             }
         }
     }

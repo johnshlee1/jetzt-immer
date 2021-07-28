@@ -37,14 +37,6 @@ class Gallery extends React.Component {
             })
         }
 
-        // const mouseEnter = (e) => {
-        //     const style = {
-        //         top: e.clientY - cursor.height() / 2,
-        //         left: e.clientX - cursor.width() / 2
-        //     }
-        //     console.log("mouseEnter")
-        // }
-
         return (
             <>
                 {/* header--------------------------------------------------------------------- */}
@@ -61,7 +53,7 @@ class Gallery extends React.Component {
 
                     <PostContent
                         className="description"
-                        description={description}
+                        content={description}
                     />
 
                     <span>
@@ -185,7 +177,7 @@ export default () => (
                 gallery {
                     image {
                         childImageSharp {
-                            fluid(maxWidth: 2048, quality: 100) {
+                            fluid(maxWidth: 1536, quality: 100, fit: COVER) {
                             ...GatsbyImageSharpFluid
                             }
                         }

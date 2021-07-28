@@ -47,7 +47,7 @@ export const WorkPostTemplate = ({
                     />
                 </div>
             ) : null}
-            <PostContent description={description} />
+            <PostContent content={description} />
         </section>
     )
 }

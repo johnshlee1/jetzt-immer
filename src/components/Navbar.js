@@ -2,13 +2,22 @@ import React from 'react'
 import { Link } from 'gatsby'
 // import logo from '../img/logo.svg'
 
+//separate Component with {useState}
+// export const toggleNavItem = () => {
+//     const [item, setItem] = useState('landing')
+//     item !== 'work' ? setItem('work') : setItem('info')
+//     // this.setState({
+//     //     navBarActiveItem: this.state.navBarActiveItem !== 'work' ? 'work' : 'info'
+//     // })
+// }
+
 const Navbar = class extends React.Component {
     constructor (props) {
         super(props)
         this.state = {
             active: false,
             navBarActiveClass: '',
-            navBarActiveItem: '',
+            item: 'landing'
         }
     }
 
@@ -33,11 +42,18 @@ const Navbar = class extends React.Component {
     }
 
     toggleNavItem = () => {
-        this.setState({
-            navBarActiveItem: this.state.navBarActiveItem !== 'work' ? 'work' : 'info'
-        })
-    }
 
+        this.state.item !== 'work'
+            ? this.setState({
+                item: 'work'
+            })
+            : this.setState({
+                item: 'info'
+            })
+        // this.setState({
+        //     navBarActiveItem: this.state.navBarActiveItem !== 'work' ? 'work' : 'info'
+        // })
+    }
 
     render () {
         return (
@@ -72,13 +88,13 @@ const Navbar = class extends React.Component {
                     >
 
                         <div className="navbar-start"
-                        // onClick={() =>this.toggleNavItem()}
+                        // onClick={() => this.toggleNavItem()}
                         >
                             <Link className="navbar-item"
-                                to={this.state.navBarActiveItem !== 'work' ? "/work" : "/info"}
                                 onClick={() => this.toggleNavItem()}
+                                to={this.state.item !== 'work' ? '/work' : '/info'}
                             >
-                                {this.state.navBarActiveItem !== 'work' ? 'Work' : 'Info'}
+                                {this.state.item !== 'work' ? 'Work' : 'Info'}
                             </Link>
                             {/* <Link className="navbar-item" to="/work">
                                 Work

@@ -3,94 +3,124 @@
 
 
 .info-grid
-    width: 100vw
-    height: 100vh
+    width: 100%
+    height: 100%
+    margin: 0
+    padding: 0
     display: grid
-    grid-template-columns: 1.5rem auto auto auto auto 1.5rem
-    grid-template-rows: 10rem auto auto 1.5rem
-    grid-template-areas: "top top top top top top" "left contact about cv image right" "left imprint developer space copyright right" "bot bot bot bot bot bot"
-
-.info-margin-top
-    grid-area: top
-    width: auto
-    width: auto
-/* ------------------------------------ */
-.contact-area
-    grid-area: contact
-    width: 204px
-    height: 317px
-    display: grid
-    grid-template-columns: auto
-    grid-template-rows: auto auto auto
-    grid-template-areas: "address" "name" "social"
-
-.address
-    grid-area: address
-    width: auto
-    height: auto
-
-.name
-    grid-area: name
-    width: auto
-    height: auto
-
-.social
-    grid-area: social
-    width: auto
-    height: auto
-
-/* ------------------------------------ */
-.about-area
-    grid-area: about
-    width: 365px
-    height: 436px
-
-.cv-area
-    grid-area: cv
-    width: 328px
-    height: 364px
-
-.info-image-area
-    grid-area: image
-    width: 299px
-    height: 362px
-/* ------------------------------------ */
-.info-margin-left
-    grid-area: left
-    width: auto
-    height: auto
-
-.info-margin-right
-    grid-area: right
-    width: auto
-    height: auto
-/* ------------------------------------ */
-.imprint-area
-    grid-area: imprint
-    width: auto
-    height: auto
-    
-.developer-area
-    grid-area: developer
-    width: auto
-    height: auto
-
-.space
-    grid-area: space
-    width: auto
-    height: auto
-
-.copyright-area
-    grid-area: copyright
-    width: auto
-    height: auto
-/* ------------------------------------ */
-.info-margin-bot
-    grid-area: bot
-    width: auto
-    height: auto
-
+    grid-template-columns: 1.5rem 20% 20% 20% auto 1.5rem  
+    grid-template-rows: 10rem auto 1fr auto 1.5rem
+    grid-template-areas: ". . . . . ." ". contact about cv image ." ". . . . . ." ". imprint developer . copyright ." ". . . . . ."
+    color: $main-red
+.info-grid section
+    width: 100%
+    height: 100%
 .content
+    margin: 0
+    padding: 0
+/* ------------------- main Info area ----------------- */
+/* ------------- contact -------------- */
+.info-grid .contact-area
+    grid-area: contact
+    display: grid
+    grid-template-columns: auto 20%
+    grid-template-rows: auto auto auto
+    grid-template-areas: "address ." "name ." "social ."
+.contact-area div
+    width: auto
+    height: auto
+.contact-area .address
+    grid-area: address
+.contact-area .name
+    grid-area: name
+.contact-area .social
+    grid-area: social
+.contact-area .social a
+    text-decoration: none
+    color: $main-red
 
-.imprint
-    display: none
+/* ------------- about / cv / image -------------- */
+.info-grid .about-area
+    grid-area: about    
+    display: grid
+    grid-template-columns: auto 20%
+    grid-template-rows: auto 20%
+    grid-template-areas: "text ." ". ."
+.about-area .about
+    grid-area: text
+
+.info-grid .cv-area
+    grid-area: cv
+    display: grid
+    grid-template-columns: auto 20%
+    grid-template-rows: auto 20%
+    grid-template-areas: "text ." ". ."
+.cv-area .cv
+    grid-area: text
+
+.info-grid .info-image-area
+    grid-area: image
+    
+/* ------------------ footer info ------------------ */
+.info-grid .imprint-area
+    grid-area: imprint
+    
+.info-grid .developer-area
+    grid-area: developer
+.developer-area .developer a
+    text-decoration: none
+    color: $main-red
+
+.info-grid .copyright-area
+    grid-area: copyright
+    text-align: end
+    
+/* ------------------------------------ */
+.imprint-box
+    width: 30rem
+    height: 65%
+    position: absolute
+    right: 1.5rem
+    top: 10rem
+    overflow-y: auto
+    background-color: $main-white
+    color: $main-black
+    font-size: 12px
+
+.imprint-area button
+    border: none
+    background-color: transparent
+    text-decoration: none
+    cursor: pointer
+    color: $main-red
+
+/* ------------------------------------ */
+=info-image-size    /* 1536 × 1097 */
+
+    +mobile
+        width: inherit
+        height: inherit
+
+    +sm-tablet
+        width: inherit
+        height: inherit
+
+    +md-tablet
+        width: inherit
+        height: inherit
+
+    +lg-tablet
+        width: inherit
+        height: inherit
+
+    +laptop-desktop
+        width: inherit
+        height: inherit
+
+    +hi-res
+        width: inherit
+        height: inherit
+
+.info-image-size
+    display: block
+    +info-image-size
