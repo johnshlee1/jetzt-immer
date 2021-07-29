@@ -11,7 +11,7 @@ contact: |-
   +45 53144388
 path: /info
 templateKey: info-page
-image: /img/åbb-4.jpg
+image: /img/jetzt_immer.png
 address: |-
   *Studio jetzt-immer* \
   Weisestraße 27 \

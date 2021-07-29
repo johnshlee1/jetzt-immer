@@ -30,9 +30,10 @@ collections:
         allow_add: true
         label_singular: "image"
         fields: [
-          {label: "Image", name: "image", widget: "image", media_folder: "img/work"}
+          {label: "Image", name: "image", widget: "image", media_folder: "./img/work"}
         ]
       - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Video", name: "video", widget: "file", media_folder: "./video"}
   - name: "pages"
     label: "Pages"
     files:
