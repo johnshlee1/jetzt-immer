@@ -3,7 +3,7 @@ contact: |-
   Siri Lee Lindskrog \
   Graphic & Type designer\
   s@jetzt-immer.studio \
-  +49 17676981955 
+  +49 17676981955
 
   Amanda-Li Kollberg \
   Graphic Designer\
@@ -11,7 +11,7 @@ contact: |-
   +45 53144388
 path: /info
 templateKey: info-page
-image: /img/åbb-4.jpg
+image: /img/jetzt_immer.png
 address: |-
   *Studio jetzt-immer* \
   Weisestraße 27 \
@@ -36,7 +36,7 @@ cv: |-
   PRESS \
   Eye on Design \
   Adobe 99U \
-  Page Magazine 
+  Page Magazine
 
   TEACHING \
   Krabbesholm Højskole, Denmark \

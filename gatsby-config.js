@@ -32,6 +32,19 @@ module.exports = {
         'gatsby-plugin-sharp',
         'gatsby-transformer-sharp',
         {
+            resolve: 'gatsby-remark-video',
+            options: {
+                width: 800,
+                height: 'auto',
+                preload: 'auto',
+                muted: true,
+                autoplay: true,
+                playsinline: true,
+                controls: true,
+                loop: true
+            }
+        },
+        {
             resolve: 'gatsby-transformer-remark',
             options: {
                 plugins: [

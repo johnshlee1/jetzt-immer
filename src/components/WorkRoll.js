@@ -19,6 +19,7 @@ class Gallery extends React.Component {
         const { title } = this.props
         const { gallery } = this.props
         const { description } = this.props
+        const { video } = this.props
         const length = gallery.length - 1
         const imgIndex = this.state.index
         const PostContent = HTMLContent || Content
@@ -61,7 +62,10 @@ class Gallery extends React.Component {
                     </span>
                     <div className="border"></div>
                 </header>
-
+                <video controls="" autoplay="" loop="" style={{ width: "200px" }}>
+                    <source src={video} type="video/mp4" />
+                    <p>Your browser cannot play the provided video file.</p>
+                </video>
                 {/* gallery -------------------------------------------------------------------- */}
                 <div className="gallery">
 
@@ -106,6 +110,7 @@ class Work extends React.Component {
                         const { gallery } = work.frontmatter
                         const { title } = work.frontmatter
                         const { description } = work.frontmatter
+                        const { video } = work.frontmatter
                         const { color } = work.frontmatter
                         const { cursorNext } = work.frontmatter
                         const { cursorPrev } = work.frontmatter
@@ -117,6 +122,7 @@ class Work extends React.Component {
                                         title={title}
                                         description={description}
                                         gallery={gallery}
+                                        video={video.publicURL}
                                         startImagePosition={0}
                                         cursorNext={cursorNext}
                                         cursorPrev={cursorPrev}
@@ -182,6 +188,9 @@ export default () => (
                             }
                         }
                     }
+                }
+                video {
+                   publicURL
                 }
                 color
               }

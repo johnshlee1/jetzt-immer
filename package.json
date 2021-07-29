@@ -16,6 +16,7 @@
     "gatsby-remark-copy-linked-files": "^2.2.4",
     "gatsby-remark-images": "^3.2.6",
     "gatsby-remark-relative-images": "^0.3.0",
+    "gatsby-remark-video": "^1.2.5",
     "gatsby-source-filesystem": "^2.2.5",
     "gatsby-transformer-remark": "^2.7.5",
     "gatsby-transformer-sharp": "^2.4.7",
@@ -51,6 +52,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "netlify-cli": "^5.2.11",
     "prettier": "^2.0.5"
   }
 }
