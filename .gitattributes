@@ -1,0 +1,11 @@
+/img/jetzt_immer.png filter=lfs diff=lfs merge=lfs -text
+/src/pages/work/video/20210608-movement-training-shadowplay-2.mp4 filter=lfs diff=lfs merge=lfs -text
+/src/pages/work/img/2020book_3.jpg filter=lfs diff=lfs merge=lfs -text
+/src/pages/work/img/2020book_4.jpg filter=lfs diff=lfs merge=lfs -text
+/src/pages/work/img/2020book_1.jpg filter=lfs diff=lfs merge=lfs -text
+/src/pages/work/img/2020book_2.jpg filter=lfs diff=lfs merge=lfs -text
+/src/pages/work/img/img_0101.jpg filter=lfs diff=lfs merge=lfs -text
+/src/pages/work/img/img_0107.jpg filter=lfs diff=lfs merge=lfs -text
+/src/pages/work/img/img_0192_s.jpg filter=lfs diff=lfs merge=lfs -text
+/src/pages/work/img/img_7951.jpg filter=lfs diff=lfs merge=lfs -text
+/src/pages/work/img/img_7954_4.jpg filter=lfs diff=lfs merge=lfs -text
