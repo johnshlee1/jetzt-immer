@@ -10,10 +10,10 @@ description: test for gallery Lorem ipsum dolor sit amet, consectetur adipiscing
   occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
   anim id est laborum
 gallery:
-  - image: ./img/åbb-4.jpg
-  - image: ./img/åbb-9.jpg
-  - image: ./img/åbb-12alt.jpg
-  - image: ./img/åbb-16.jpg
+  - image: ./img/2020book_1.jpg
+  - image: ./img/2020book_2.jpg
+  - image: ./img/2020book_3.jpg
+  - image: ./img/2020book_4.jpg
 video: ./video/20210608-movement-training-shadowplay-2.mp4
 date: 2021-07-28T19:57:14.563Z
 ---
