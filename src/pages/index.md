@@ -1,6 +1,6 @@
 ---
 templateKey: index-page
-title: Studio jetzt-immer 
+title: Studio jetzt-immer
 description: Siri Lee Lindskrog, Amanda-Li Kollberg
-image: /img/jetzt_immer.png
+image: /img/conjugative-literacy-2019-leipzig-performance-1.jpg
 ---
