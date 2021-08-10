@@ -10,9 +10,11 @@ description: test for gallery Lorem ipsum dolor sit amet, consectetur adipiscing
   occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
   anim id est laborum
 gallery:
-  - image: img/work/åbb-4.jpg
-  - image: img/work/åbb-9.jpg
-  - image: img/work/åbb-12alt.jpg
-  - image: img/work/åbb-16.jpg
+  - image: img/work/there-is-no-home-to-go-back-to-40.692-74.177-scaled.jpg
+  - image: img/work/there-is-no-home-to-go-back-to-40.692-74.157-scaled.jpg
+  - image: img/work/there-is-no-home-to-go-back-to-40.692-74.137-scaled.jpg
+  - image: img/work/there-is-no-home-to-go-back-to-40.692-74.117-scaled.jpg
+  - image: img/work/there-is-no-home-to-go-back-to-40.692-74.097-scaled.jpg
+  - image: img/work/there-is-no-home-to-go-back-to-40.692-74.077-scaled.jpg
 date: 2021-07-28T19:57:14.563Z
 ---
