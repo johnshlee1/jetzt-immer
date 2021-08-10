@@ -1,16 +1,17 @@
 ---
 templateKey: work-post
-title: work number 3
-date: 2021-05-05T16:28:41.929Z
-description: this third work is a **beautiful** magazine cover that contains
-  courageous interviews from the *micro organisms* in our guts Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+color: "#9a8137"
+title: "drawings: free sketch"
+description: |-
+  ink brush on paper\
+  2017
 gallery:
   - label: Image
     name: image
     widget: image
     media_folder: /img/work
-    image: img/work/åbb-9.jpg
-  - image: img/work/åbb-4.jpg
-  - image: img/work/åbb-16.jpg
-color: "#9a8137"
+    image: img/work/free-sketch-1.jpg
+  - image: img/work/free-sketch-3-scaled.jpg
+  - image: img/work/free-sketch-4-scaled.jpg
+date: 2021-05-05T16:28:41.929Z
 ---
