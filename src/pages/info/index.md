@@ -11,7 +11,7 @@ contact: |-
   +45 53144388
 path: /info
 templateKey: info-page
-image: /img/åbb-4.jpg
+image: /img/thumbnail-conjugative-literacy-2-1-1-e1589035405552.jpg
 address: |-
   *Studio jetzt-immer* \
   Weisestraße 27 \
