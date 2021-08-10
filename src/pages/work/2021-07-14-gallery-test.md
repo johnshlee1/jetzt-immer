@@ -1,14 +1,14 @@
 ---
 templateKey: work-post
 color: "#d6dacb"
-title: "Gallery TEST "
-description: test for gallery Lorem ipsum dolor sit amet, consectetur adipiscing
-  elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-  enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-  aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-  voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-  occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-  anim id est laborum
+title: " drawings: screen"
+description: >-
+  *there’s no place like home* is a series of drawings utilizing Google Maps
+  images framed in 1000m distance above the ground.\
+
+  Originally conceived to travel frame by frame from Brooklyn home at the time of the drawings back to Sanbon, South Korea, past home before migrating to the US. The drawings are also a way of note-taking while listening to various lectures and podcasts.\
+
+  After 14 drawings came the realization of the impossibility, or rather absurdity of spending hours everyday for decades to arrive at a place that doesn’t and won’t exist if the project is even complete. Unlike the common notion of ‘home sweet home’, no place is permanent.
 gallery:
   - image: img/work/there-is-no-home-to-go-back-to-40.692-74.177-scaled.jpg
   - image: img/work/there-is-no-home-to-go-back-to-40.692-74.157-scaled.jpg
