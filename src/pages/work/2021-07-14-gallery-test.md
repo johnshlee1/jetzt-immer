@@ -3,8 +3,14 @@ templateKey: work-post
 color: "#d6dacb"
 title: " drawings: screen"
 description: >-
-  *there’s no place like home* is a series of drawings utilizing Google Maps
-  images framed in 1000m distance above the ground.\
+  ink brush on rice paper\
+
+  33.5 cm x 24.5 cm\
+
+  2017
+
+
+  *there’s no place like home* is a series of drawings utilizing Google Maps images framed in 1000m distance above the ground.\
 
   Originally conceived to travel frame by frame from Brooklyn home at the time of the drawings back to Sanbon, South Korea, past home before migrating to the US. The drawings are also a way of note-taking while listening to various lectures and podcasts.\
 
