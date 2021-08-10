@@ -1,6 +1,6 @@
 ---
 templateKey: work-post
-color: "#4f8437"
+color: "#c8f1b7"
 title: " journey and journal"
 description: >-
   all-point pen on photographs printed on various paper\
