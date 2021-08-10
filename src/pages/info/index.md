@@ -1,47 +1,24 @@
 ---
 contact: |-
-  Siri Lee Lindskrog \
-  Graphic & Type designer\
-  s@jetzt-immer.studio \
-  +49 17676981955 
-
-  Amanda-Li Kollberg \
-  Graphic Designer\
-  a@jetzt-immer.studio \
-  +45 53144388
+  dance, drawing, writing\
+  johnshlee1@gmail.com
 path: /info
 templateKey: info-page
 image: /img/thumbnail-conjugative-literacy-2-1-1-e1589035405552.jpg
-address: |-
-  *Studio jetzt-immer* \
-  Weisestraße 27 \
-  12049 Berlin \
-  Germany
-social: "[Instagram](https://instagram.com)"
-about: >-
-  Studio jetzt—immer is a Berlin based design studio, specialised in editorial
-  design, visual identity, typography driven design and concept development. We
-  mainly work within culture, art and social issues. The studio was founded in
-  Copenhagen in 2014 by Amanda-Li Kollberg and Siri Lee Lindskrog. 
-
-
-  Our clients include: BODE Gallery, Forening for Boghåndværk, Anxiety Empire Magazine, KADK — The Royal Danish Academy of Fine Arts Schools of Architecture, Design and Conservation, Afart Magazine, Kosmos Magazine, Herlev, Frederikssund & Egedal Libraries, European Glass Context, NW Gallery, Antalis Papers, Artland, Rosinante&Co, Forlaget Silkefyret, DokumentART Film Festival, Detour Urban Dance Festival, Insitu Site-Specific Dance Festival, The Danish Music Schools.
+address: "*John SH Lee*"
+social: "[Instagram](https://www.instagram.com/not_art_artist/)"
+about: As a hobby, he likes to breakdance in public and private spaces, read,
+  print and bind PDFs into books, learn etymology of Chinese writings and sing
+  German and Danish songs.
 cv: |-
-  TALKS \
-  Krabbesholm Højskole, Denmark \
-  All Heart No Hype, panel discussion, Berlin \
-  Type Thursday, Berlin \
-  Conversas, Berlin 
+  Baneful Medicine\
+  @ John Jay College NY, 2019
 
-  PRESS \
-  Eye on Design \
-  Adobe 99U \
-  Page Magazine 
+  Postmodernism and Aesthetics: Collide or Steer?\
+  @ Korean Cultural Center NY, 2018
 
-  TEACHING \
-  Krabbesholm Højskole, Denmark \
-  ESDIP, Berlin \
-  Godsbanen (Workshop), Denmark
+  unbag magazine, first edition\
+  Brooklyn, 2017
 imprint: Haftung für Inhalte Die Inhalte meiner Seiten wurden mit größter
   Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der
   Inhalte kann ich jedoch keine Gewähr übernehmen. Als Diensteanbieter bin ich
@@ -109,5 +86,5 @@ imprint: Haftung für Inhalte Die Inhalte meiner Seiten wurden mit größter
   Google in der zuvor beschriebenen Art und Weise und zu dem zuvor benannten
   Zweck einverstanden.
 developer: "Web development: [John Lee](https://johnshlee.com)"
-copyright: © 2021 - Studio jetzt-immer
+copyright: © 2021 - John SH Lee
 ---
