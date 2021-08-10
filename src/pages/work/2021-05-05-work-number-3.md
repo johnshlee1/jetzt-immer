@@ -1,6 +1,6 @@
 ---
 templateKey: work-post
-color: "#9a8137"
+color: "#ddc683"
 title: "drawings: free sketch"
 description: |-
   ink brush on paper\
