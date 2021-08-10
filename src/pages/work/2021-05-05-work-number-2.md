@@ -1,6 +1,6 @@
 ---
 templateKey: work-post
-color: "#7e806e"
+color: "#aeafa1"
 title: memorial book for the deceased
 description: >-
   book with writings and drawings on found papers\
